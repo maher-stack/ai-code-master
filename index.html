@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Master - Learn Programming with AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #000000;
+            color: #e8f5e9;
+            line-height: 1.7;
+            overflow-x: hidden;
+            direction: ltr;
+            text-align: left;
+        }
+        .ar { direction: rtl; text-align: right; }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(27, 94, 32, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(27, 94, 32, 0.3);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #a5d6a7;
+        }
+        .logo i {
+            font-size: 2rem;
+            margin-left: 10px;
+            color: #4caf50;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            color: #c8e6c9;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #4caf50;
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .lang-toggle {
+            background: #1b5e20;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .lang-toggle:hover {
+            background: #4caf50;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            color: #2e7d32;
+            text-shadow: 0 0 15px rgba(46, 125, 50, 0.4);
+            margin-bottom: 20px;
+        }
+        .tagline {
+            font-size: 1.5rem;
+            color: #81c784;
+            margin-bottom: 50px;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        .feature-card {
+            background: rgba(27, 94, 32, 0.3);
+            border: 2px solid #2e7d32;
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(5px);
+        }
+        .feature-card:hover {
+            transform: translateY(-15px);
+            background: rgba(27, 94, 32, 0.5);
+            box-shadow: 0 15px 30px rgba(27, 94, 32, 0.4);
+            border-color: #4caf50;
+        }
+        .feature-card h3 {
+            color: #a5d6a7;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+        .feature-card p {
+            color: #c8e6c9;
+            font-size: 1.1rem;
+        }
+        .cta-button {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 18px 50px;
+            background: #2e7d32;
+            color: white;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(46, 125, 50, 0.5);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background: #4caf50;
+            transform: scale(1.1);
+            box-shadow: 0 12px 30px rgba(76, 175, 80, 0.6);
+        }
+        footer {
+            margin-top: 100px;
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .logo { font-size: 1.4rem; }
+            header h1 { font-size: 2.5rem; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <i class="fas fa-robot"></i>
+            <span>AI Code Master</span>
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="course.html">Course</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="lang-toggle" onclick="toggleLanguage()">العربية</button>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container" id="home">
+        <header>
+            <h1>AI Code Master</h1>
+            <p class="tagline">Learn Programming with an AI Teacher That Understands You</p>
+        </header>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>AI Tutor with Voice & Avatar</h3>
+                <p>Interactive AI teacher explains in real-time with moving avatar</p>
+            </div>
+            <div class="feature-card">
+                <h3>Instant Code Correction</h3>
+                <p>Write code → Get AI feedback in seconds</p>
+            </div>
+            <div class="feature-card">
+                <h3>24/7 AI Chat</h3>
+                <p>Ask any programming question anytime</p>
+            </div>
+            <div class="feature-card">
+                <h3>14-Day Free Trial</h3>
+                <p>Full access, then just $15/month</p>
+            </div>
+        </div>
+
+        <a href="course.html" class="cta-button">Start Learning Now - Free</a>
+
+        <footer>
+            <p>© 2025 AI Code Master – All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script>
+        let isArabic = false;
+
+        function toggleLanguage() {
+            const btn = document.querySelector('.lang-toggle');
+            const body = document.body;
+            const h1 = document.querySelector('header h1');
+            const tagline = document.querySelector('.tagline');
+            const features = document.querySelectorAll('.feature-card h3, .feature-card p');
+            const cta = document.querySelector('.cta-button');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const logo = document.querySelector('.logo span');
+
+            if (!isArabic) {
+                // Switch to Arabic
+                body.classList.add('ar');
+                document.documentElement.lang = 'ar';
+                document.documentElement.dir = 'rtl';
+                h1.textContent = 'AI Code Master';
+                tagline.textContent = 'تعلم البرمجة مع معلم ذكاء اصطناعي يفهمك';
+                features[0].textContent = 'معلم AI صوتي ومرئي'; features[1].textContent = 'أفاتار متحرك يشرح لك فوراً';
+                features[2].textContent = 'تصحيح فوري للكود'; features[3].textContent = 'اكتب الكود → احصل على تصحيح ذكي';
+                features[4].textContent = 'شات ذكي 24/7'; features[5].textContent = 'اسأل أي سؤال في البرمجة';
+                features[6].textContent = 'تجربة مجانية 14 يوم'; features[7].textContent = 'جرب كل الميزات، ثم 15 دولار/شهر';
+                cta.textContent = 'ابدأ التعلم الآن - مجاناً';
+                navLinks[0].textContent = 'الرئيسية'; navLinks[1].textContent = 'الكورس';
+                navLinks[2].textContent = 'من نحن'; navLinks[3].textContent = 'تواصل';
+                logo.textContent = 'AI Code Master';
+                btn.textContent = 'English';
+                isArabic = true;
+            } else {
+                // Switch to English
+                body.classList.remove('ar');
+                document.documentElement.lang = 'en';
+                document.documentElement.dir = 'ltr';
+                h1.textContent = 'AI Code Master';
+                tagline.textContent = 'Learn Programming with an AI Teacher That Understands You';
+                features[0].textContent = 'AI Tutor with Voice & Avatar'; features[1].textContent = 'Interactive AI teacher explains in real-time';
+                features[2].textContent = 'Instant Code Correction'; features[3].textContent = 'Write code → Get AI feedback in seconds';
+                features[4].textContent = '24/7 AI Chat'; features[5].textContent = 'Ask any programming question anytime';
+                features[6].textContent = '14-Day Free Trial'; features[7].textContent = 'Full access, then just $15/month';
+                cta.textContent = 'Start Learning Now - Free';
+                navLinks[0].textContent = 'Home'; navLinks[1].textContent = 'Course';
+                navLinks[2].textContent = 'About'; navLinks[3].textContent = 'Contact';
+                logo.textContent = 'AI Code Master';
+                btn.textContent = 'العربية';
+                isArabic = false;
+            }
+        }
+    </script>
+</body>
+</html>
